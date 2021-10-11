@@ -43,7 +43,7 @@ $("#container").append('<div class="portrait" rel="'+i+'"><a target="_blank" hre
 }
 
 $(window).scroll(function(){
-    if ($(window).scrollTop() == $(document).height()-$(window).height()){
+    if ($(window).scrollTop() >= ($(document).height()-200)-$(window).height()){
         //alert("We're at the bottom of the page!!");
 	var i = parseInt($( ".portrait" ).last().attr('rel'));
 	appendPortrait(i+1);
