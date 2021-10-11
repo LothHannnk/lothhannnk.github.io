@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes" />
+<meta charset="UTF-8">
+<title>Beyond Humanity - Scrollable Version</title>
+<script src="jquery-3.6.0.min.js"></script>
+<style>
+body {background-color:#000;font-family:sans-serif;color:#fff;text-align:center;}
+.portrait {width:612px;height:662px;margin:0 auto;}
+a {text-decoration:none;color:#ddd;}
+a:hover {text-decoration:underline;color:#fff;}
+</style>
+</head>
+<body>
+<h1>Beyond Humanity - Scrollable Version</h1>
+<div id="container">
+<div class="portrait" rel="0">
+<a target="_blank" href="https://opensea.io/assets/0x8abd131cea8ff23ce0badb631ef7a93f67e96180/0"><img src="https://lothhannnk.github.io/data/originals/resized_beyond-humanity-0.jpeg" /></a>
+<p>#0 | <a target="_blank" href="https://gateway.pinata.cloud/ipfs/QmPkZrycsMPAj4ALHZQdaNx2Bf2bxcXfnqW1wFC7TDpL5g/beyond-humanity-0.jpeg">High Resolution</a> | <a target="_blank" href="https://opensea.io/assets/0x8abd131cea8ff23ce0badb631ef7a93f67e96180/0">OpenSea</a></p>
+</div>
+<div class="portrait" rel="1">
+<a target="_blank" href="https://opensea.io/assets/0x8abd131cea8ff23ce0badb631ef7a93f67e96180/1"><img src="https://lothhannnk.github.io/data/originals/resized_beyond-humanity-1.jpeg" /></a>
+<p>#1 | <a target="_blank" href="https://gateway.pinata.cloud/ipfs/QmPkZrycsMPAj4ALHZQdaNx2Bf2bxcXfnqW1wFC7TDpL5g/beyond-humanity-1.jpeg">High Resolution</a> | <a target="_blank" href="https://opensea.io/assets/0x8abd131cea8ff23ce0badb631ef7a93f67e96180/1">OpenSea</a></p>
+</div>
+<div class="portrait" rel="2">
+<a target="_blank" href="https://opensea.io/assets/0x8abd131cea8ff23ce0badb631ef7a93f67e96180/2"><img src="https://lothhannnk.github.io/data/originals/resized_beyond-humanity-2.jpeg" /></a>
+<p>#2 | <a target="_blank" href="https://gateway.pinata.cloud/ipfs/QmPkZrycsMPAj4ALHZQdaNx2Bf2bxcXfnqW1wFC7TDpL5g/beyond-humanity-2.jpeg">High Resolution</a> | <a target="_blank" href="https://opensea.io/assets/0x8abd131cea8ff23ce0badb631ef7a93f67e96180/2">OpenSea</a></p>
+</div>
+<div class="portrait" rel="3">
+<a target="_blank" href="https://opensea.io/assets/0x8abd131cea8ff23ce0badb631ef7a93f67e96180/3"><img src="https://lothhannnk.github.io/data/originals/resized_beyond-humanity-3.jpeg" /></a>
+<p>#3 | <a target="_blank" href="https://gateway.pinata.cloud/ipfs/QmPkZrycsMPAj4ALHZQdaNx2Bf2bxcXfnqW1wFC7TDpL5g/beyond-humanity-3.jpeg">High Resolution</a> | <a target="_blank" href="https://opensea.io/assets/0x8abd131cea8ff23ce0badb631ef7a93f67e96180/3">OpenSea</a></p>
+</div>
+</div>
+</body>
+<script>
+function appendPortrait(i){
+$("#container").append('<div class="portrait" rel="'+i+'"><a target="_blank" href="https://opensea.io/assets/0x8abd131cea8ff23ce0badb631ef7a93f67e96180/'+i+'"><img src="https://lothhannnk.github.io/data/originals/resized_beyond-humanity-'+i+'.jpeg" /></a><p>#'+i+' | <a target="_blank" href="https://gateway.pinata.cloud/ipfs/QmPkZrycsMPAj4ALHZQdaNx2Bf2bxcXfnqW1wFC7TDpL5g/beyond-humanity-'+i+'.jpeg">High Resolution</a> | <a target="_blank" href="https://opensea.io/assets/0x8abd131cea8ff23ce0badb631ef7a93f67e96180/'+i+'">OpenSea</a></p></div>');
+}
+
+$(window).scroll(function(){
+    if ($(window).scrollTop() == $(document).height()-$(window).height()){
+        //alert("We're at the bottom of the page!!");
+	var i = parseInt($( ".portrait" ).last().attr('rel'));
+	appendPortrait(i+1);
+    }
+});
+</script>
+</html>
+
+
