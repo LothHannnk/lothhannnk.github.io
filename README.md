@@ -9,3 +9,9 @@ The PixPlot settings of the current version are: --n_neighbors 20 --min_dist 0
 I now also added a simple infinite scroll page to explore the collection (starting at #0 and automatically loading more on page end)
 
 Use it at https://lothhannnk.github.io/scroll/
+
+----
+
+I now also added a simple random portrait page to explore the collection (starting at #0 and then showing a random portrait next)
+
+Use it at https://lothhannnk.github.io/random/
