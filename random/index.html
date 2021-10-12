@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes" />
+<meta charset="UTF-8">
+<title>Beyond Humanity - Show Random Portrait</title>
+<script src="jquery-3.6.0.min.js"></script>
+<style>
+body {background-color:#000;font-family:sans-serif;color:#fff;text-align:center;}
+.portrait {width:612px;height:662px;margin:0 auto;}
+a {text-decoration:none;color:#ddd;}
+#randomPortrait {display:inline-block;padding:20px 50px;max-width:50%;border:1px solid #eee;margin-top:10px;}
+#randomPortrait:hover {background:#fff;color:#000;}
+@media all and (max-width: 612px) {
+.portrait {width:100%;height:110%;}
+img {width:100%;height:auto;object-fit:contain;}
+}
+</style>
+</head>
+<body>
+<h1>Beyond Humanity - Show Random Portrait</h1>
+<div id="container">
+<div class="portrait" id="frame" rel="0">
+<a target="_blank" href="https://opensea.io/assets/0x8abd131cea8ff23ce0badb631ef7a93f67e96180/0"><img src="https://lothhannnk.github.io/data/originals/resized_beyond-humanity-0.jpeg" /></a>
+<p>#0 | <a target="_blank" href="https://gateway.pinata.cloud/ipfs/QmPkZrycsMPAj4ALHZQdaNx2Bf2bxcXfnqW1wFC7TDpL5g/beyond-humanity-0.jpeg">High Resolution</a> | <a target="_blank" href="https://opensea.io/assets/0x8abd131cea8ff23ce0badb631ef7a93f67e96180/0">OpenSea</a></p>
+</div>
+</div>
+<a href="#" id="randomPortrait">Next random portrait</a>
+</body>
+<script>
+function changePortrait(i){
+$("#container").html('<div class="portrait" rel="'+i+'"><a target="_blank" href="https://opensea.io/assets/0x8abd131cea8ff23ce0badb631ef7a93f67e96180/'+i+'"><img src="https://lothhannnk.github.io/data/originals/resized_beyond-humanity-'+i+'.jpeg" /></a><p>#'+i+' | <a target="_blank" href="https://gateway.pinata.cloud/ipfs/QmPkZrycsMPAj4ALHZQdaNx2Bf2bxcXfnqW1wFC7TDpL5g/beyond-humanity-'+i+'.jpeg">High Resolution</a> | <a target="_blank" href="https://opensea.io/assets/0x8abd131cea8ff23ce0badb631ef7a93f67e96180/'+i+'">OpenSea</a></p></div>');
+}
+function getRandomInt(min, max, i) {
+	var min = Math.ceil(min);
+	var max = Math.floor(max);
+	var ii =  Math.floor(Math.random() * (max - min + 1)) + min;
+
+	if(ii == i) {
+		getRandomInt(min, max, i);
+	}
+	else {
+	changePortrait(ii);
+	}
+}
+var randomPortrait = document.getElementById('randomPortrait');
+randomPortrait.addEventListener('click', function() {
+	var i = parseInt($( ".portrait" ).last().attr('rel'));
+	getRandomInt(0,4443,i);
+}, false);
+</script>
+</html>
